@@ -37,12 +37,12 @@ class NameNormaliser
             if (count($parts) === 2) {
                 $firstName = null;
                 $initial = null;
-                $lastName = $parts[1];
             } else {
                 $firstName = strlen($parts[1]) === 1 ? null : $parts[1];
                 $initial = strlen($parts[1]) === 1 ? $parts[1] : null;
-                $lastName = $parts[2];
             }
+
+            $lastName = array_pop($parts);
 
             $normalisedNames->push([
                 'title' => $parts[0],
