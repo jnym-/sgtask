@@ -1,17 +1,19 @@
 <template>
     <section>
-        <form @submit.prevent="upload">
-            <h1>Homeowner CSV upload</h1>
-            <div class="form-group">
-                <input type="file" ref="csv"> <br>
-                <small v-if="state.errors.csv" id="error">
+        <h1 class="mt-5 mb-4 text-center">Homeowner CSV upload</h1>
+        <form @submit.prevent="upload" class="row mt-5">
+            <div class="col-12 col-md-6 offset-md-2 form-group">
+                <input type="file" ref="csv" class="form-control"> <br>
+                <small v-if="state.errors.csv" id="error" class="form-text text-danger">
                     {{ state.errors.csv[0] }}
                 </small>
             </div>
-            <button type="submit">Upload</button>
+            <div class="col-12 col-md-2">
+                <button type="submit" class="btn btn-success w-100 mt-2 mt-md-0">Upload</button>
+            </div>
         </form>
-        <div v-if="state.names.length">
-            <table>
+        <div v-if="state.names.length" class="mt-5">
+            <table class="table table-bordered table-striped">
                 <thead>
                     <tr>
                         <th>title</th>
@@ -29,7 +31,7 @@
                     </tr>
                 </tbody>
             </table>
-            <button @click="clear">Clear</button>
+            <button @click="clear" class="btn btn-warning mt-3 mb-5 mx-auto">Clear</button>
         </div>
     </section>
 </template>
