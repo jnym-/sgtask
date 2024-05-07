@@ -18,7 +18,7 @@
                     <tr>
                         <th>title</th>
                         <th>first_name</th>
-                        <th>inital</th>
+                        <th>initial</th>
                         <th>last_name</th>
                     </tr>
                 </thead>
